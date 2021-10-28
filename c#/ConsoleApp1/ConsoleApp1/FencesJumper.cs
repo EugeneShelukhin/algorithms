@@ -5,15 +5,14 @@ namespace ConsoleApp1
 {
     /// <summary>
     /// Task description:
-    /// Given array of integers, 
-    /// need to find out if there is a combination of arbitrary number of array elements whose sum equals to (collection.length-1).
-    /// Example:
-    /// input [0,-1,2,2,4,8]
-    /// output "true" (because -1+2+4=5)
-    /// 
-    /// Example 2:
-    /// input [1,0,3]
-    /// output "false" (because no sum is equal to 2)
+    /// You are playing a game where your character jumps over fences. To win he needs to reach the finish line, in our case it meansto get to the last index of the array
+    /// The value in the array means how many fences the caracter must step over.Your task is to swap the cells in the array in places so that the hero can jump to the end position
+    /// Output true if it is possible to win the game, otherwise - false
+    /// Input: fences - array of jump length values. The character starts with index 0
+    /// Output: Bool - is it possible to win
+    /// Example: fences = [0, 2, 4, 1, 6, 2]
+    /// GetResult(fences) = True
+    /// Explaination: swap the cells in places this way: [1, 4, 2, 0, 6, 2]. The hero jumped from the 0th index to the 1st (because fences[0]=1), then he jumped from index 1 to 5 (fences[1]=4) 5 is the last index of the array - he won.
     /// </summary>
     class FencesJumper
     {
