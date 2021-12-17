@@ -1,17 +1,17 @@
-﻿
+﻿using GameOfLife;
 using System;
 using System.Threading;
 
-namespace GameOfLife
+namespace ConsoleApp
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             int xLength = 25;
             int yLength = 25;
-            var universe = new Cell[xLength, yLength];
-            universe.Init();
+            int steps = 1000;
+            var universe = new Universe(xLength, yLength);
 
             universe[1, 0].IsAlive = true;
             universe[2, 1].IsAlive = true;
@@ -20,17 +20,16 @@ namespace GameOfLife
             universe[2, 2].IsAlive = true;
 
             var (_, initialCursorTop) = Console.GetCursorPosition();
-            universe.Print();
+            UniverseConsolePrinter.Print(universe, initialCursorTop);
 
-            for (var i = 0; i < 1000; i++)
+            for (var i = 0; i < steps; i++)
             {
                 universe.Move();
-                universe.Print(initialCursorTop);
+                UniverseConsolePrinter.Print(universe, initialCursorTop);
 
                 Console.WriteLine("step=" + i);
                 Thread.Sleep(25);
             }
-
         }
     }
 }
