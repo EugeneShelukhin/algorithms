@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            FencesJumper.RunCode();
+            (new MonitorWait()).test();
+            //FencesJumper.RunCode();
         }
     }
 }
