@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            (new MonitorWait()).test();
-            //FencesJumper.RunCode();
+            new ThrottleingTest().Execute();
         }
     }
 }
