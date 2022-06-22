@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -45,4 +46,20 @@ namespace ConsoleApp1
 
 
     }
+
+    class deadlock2
+    {
+        object locker = new object();
+
+        internal void Test()
+        {
+            Monitor.Enter(locker);
+            Monitor.Wait(locker);
+            Console.WriteLine("Test");
+            Monitor.Exit(locker);
+        }
+    }
+
+
+
 }

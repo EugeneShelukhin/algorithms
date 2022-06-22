@@ -35,7 +35,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Start T2");
                 Console.WriteLine("before pulse");
-                //Monitor.Pulse(o);
+                Monitor.Pulse(o);
                 Console.WriteLine("after pulse");
                 Console.WriteLine("End T2");
             }
